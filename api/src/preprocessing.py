@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 def group_location():
     top_corner = [0.02, 51.58]
-    bottom_corner = [-0.02, 51.39]
+    bottom_corner = [-0.26, 51.39]
     x = np.arange(bottom_corner[0], top_corner[0], (top_corner[0] - bottom_corner[0]) / 3)
     y = np.arange(bottom_corner[1], top_corner[1], (top_corner[1] - bottom_corner[1]) / 3)
     x_grid, y_grid = np.meshgrid(x, y)
