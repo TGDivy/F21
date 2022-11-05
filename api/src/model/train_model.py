@@ -5,10 +5,10 @@ import torch.nn.functional as F
 
 
 class DataFormat:
-    def __init__(self, datassource): # data - time - features - has crimed - type_data
-        self.datasource = datassource
+    def __init__(self, data_source):  # array: data - time - features - has crimed - type_data
+        self.datasource = data_source
 
-    def load_data(self, type_data: str):
+    def load_data(self, type_data):
         return []
 
 
@@ -36,8 +36,9 @@ class TrainModel:
                                         hidden_dim=6,
                                         target_size=1)
         self.epochs = 10
-        self.train_loader = DataFormat().load_data("train")
-        self.test_loader = DataFormat().load_data("test")
+        data = DataFormat("")
+        self.train_loader = data.load_data(type_data="train")
+        self.test_loader = data.load_data(type_data="test")
 
     def train(self):
         loss_function = nn.BCEWithLogitsLoss()
