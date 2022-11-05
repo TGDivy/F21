@@ -1,5 +1,5 @@
 lon,lat,amenity
--0.1528165,51.524364,waste_basket
+-0.1528165,51.524364,   
 -0.0933878,51.529125,bicycle_rental
 -0.1431214,51.528263,advice
 -0.1402758,51.534256,bicycle_parking
@@ -3232,7 +3232,7 @@ lon,lat,amenity
 -0.0020481,51.5494,post_box
 0.0019745,51.545456,kindergarten
 0.0007403,51.545357,post_box
-2.78e-05,51.54496,telephone
+2.78E-05,51.54496,telephone
 0.0012228,51.54226,parking
 0.0032106,51.54275,pub
 0.0028343,51.542458,pub
@@ -6316,7 +6316,7 @@ lon,lat,amenity
 -0.0111261,51.55676,place_of_worship
 -0.0182178,51.55524,post_box
 -0.0054444,51.552715,arts_centre
-1.67e-05,51.556446,post_box
+1.67E-05,51.556446,post_box
 -0.0181471,51.593067,post_box
 -0.2155283,51.466473,post_box
 -0.2145974,51.465317,post_box
@@ -6549,7 +6549,7 @@ lon,lat,amenity
 -0.000835,51.61032,post_box
 -0.0012057,51.607533,post_box
 -0.0019491,51.60571,post_box
-4.05e-05,51.614414,post_box
+4.05E-05,51.614414,post_box
 0.0027414,51.61841,post_box
 0.0038624,51.63511,post_box
 0.0024458,51.6309,post_box
@@ -13508,7 +13508,7 @@ lon,lat,amenity
 -0.0074992,51.459686,post_box
 -0.009278,51.458393,post_box
 -0.0055695,51.46103,post_box
-3.07e-05,51.453556,post_box
+3.07E-05,51.453556,post_box
 -0.017827,51.471256,post_box
 0.0040813,51.444237,post_box
 0.0018761,51.452103,post_box
@@ -15051,7 +15051,7 @@ lon,lat,amenity
 0.0059091,51.613964,post_box
 -0.0110453,51.606724,post_box
 0.0018785,51.610615,post_box
--5.76e-05,51.608326,post_box
+-5.76E-05,51.608326,post_box
 -0.000816,51.63185,post_box
 -0.0024392,51.62549,post_box
 -0.0032153,51.602367,post_box
@@ -17576,8 +17576,8 @@ lon,lat,amenity
 -0.0005097,51.5419,toilets
 -0.000246,51.541737,food_court
 -0.0001622,51.54172,fast_food
-6.45e-05,51.54165,pharmacy
--8.57e-05,51.54119,community_centre
+6.45E-05,51.54165,pharmacy
+-8.57E-05,51.54119,community_centre
 0.0004465,51.542027,bank
 -0.0013975,51.54162,bank
 -0.0009642,51.54162,pharmacy
@@ -17592,7 +17592,7 @@ lon,lat,amenity
 0.0005834,51.540524,post_office
 0.0007627,51.540657,bank
 0.0001697,51.54025,pub
-3.24e-05,51.54005,restaurant
+3.24E-05,51.54005,restaurant
 -0.0716229,51.522617,bicycle_rental
 -0.0688275,51.521755,bicycle_rental
 0.11475,51.50631,place_of_worship
@@ -17792,7 +17792,7 @@ lon,lat,amenity
 0.0386453,51.52771,bicycle_parking
 0.0089781,51.573376,post_box
 0.0105088,51.571587,post_box
-6.5e-06,51.561874,post_box
+6.5E-06,51.561874,post_box
 0.0063928,51.572773,post_box
 0.0225595,51.576466,post_box
 -0.0035085,51.569374,post_box
@@ -19564,7 +19564,7 @@ lon,lat,amenity
 -0.200626,51.482903,bicycle_parking
 -0.1991106,51.48046,telephone
 -0.1991284,51.480507,telephone
--8.63e-05,51.536533,police
+-8.63E-05,51.536533,police
 -0.1741615,51.581554,post_box
 -0.4617815,51.37408,nursing_home
 -0.1337456,51.519947,waste_basket
@@ -23928,7 +23928,7 @@ lon,lat,amenity
 -0.0395059,51.58956,cafe
 -0.3082917,51.632256,cafe
 -0.4017607,51.665154,pub
--5.05e-05,51.60871,bicycle_parking
+-5.05E-05,51.60871,bicycle_parking
 -0.1383577,51.53419,waste_basket
 -0.1388472,51.5345,waste_basket
 -0.1388645,51.534508,bench
@@ -25530,7 +25530,7 @@ lon,lat,amenity
 -0.0095191,51.46263,fast_food
 -0.0001878,51.53934,bicycle_parking
 -0.0033306,51.537148,bicycle_parking
-6.7e-05,51.539604,bicycle_parking
+6.7E-05,51.539604,bicycle_parking
 -0.4116388,51.328865,cafe
 -0.3183934,51.58115,bench
 -0.3179645,51.58164,vending_machine
@@ -28671,7 +28671,7 @@ lon,lat,amenity
 -0.0291784,51.530308,post_box
 0.00261,51.56643,post_box
 0.0055956,51.566902,grit_bin
--8.1e-06,51.5675,grit_bin
+-8.1E-06,51.5675,grit_bin
 0.0003712,51.567814,grit_bin
 -0.0003515,51.568058,grit_bin
 0.0077159,51.56832,grit_bin
@@ -33634,7 +33634,7 @@ lon,lat,amenity
 0.00287,51.47396,bench
 0.0029102,51.473873,waste_basket
 0.0012647,51.472664,waste_basket
-3.82e-05,51.472504,waste_basket
+3.82E-05,51.472504,waste_basket
 0.0014739,51.472607,waste_basket
 0.0027707,51.473965,waste_basket
 0.0026004,51.474243,bench
@@ -33661,14 +33661,14 @@ lon,lat,amenity
 0.001207,51.47517,bench
 -0.0001112,51.476784,waste_basket
 0.0001033,51.477173,waste_basket
-9.61e-05,51.476456,bench
+9.61E-05,51.476456,bench
 0.0016227,51.47462,bench
 0.0003911,51.477695,waste_basket
 0.0010005,51.477768,waste_basket
 0.0001527,51.476524,waste_basket
 0.0010742,51.476017,bench
 -0.0003594,51.477703,waste_basket
-1.07e-05,51.476532,bicycle_parking
+1.07E-05,51.476532,bicycle_parking
 0.0018239,51.47442,bench
 0.0023201,51.473816,bench
 0.0025105,51.47373,waste_basket
@@ -35345,7 +35345,7 @@ lon,lat,amenity
 -0.2397217,51.449673,fountain
 0.0089949,51.457024,post_box
 0.0230626,51.450237,post_box
--7.2e-05,51.458485,post_box
+-7.2E-05,51.458485,post_box
 0.0097919,51.45201,post_box
 -0.084486,51.47809,bicycle_parking
 -0.084907,51.47819,bicycle_parking
@@ -64410,10 +64410,10 @@ lon,lat,amenity
 0.0018563,51.43002,waste_basket
 0.0006922,51.429787,waste_basket
 0.0040447,51.43032,waste_basket
-3.12e-05,51.429787,bench
+3.12E-05,51.429787,bench
 0.0019422,51.430027,bench
 0.0043843,51.430298,bench
-4.79e-05,51.429718,waste_basket
+4.79E-05,51.429718,waste_basket
 0.0026597,51.43004,bench
 0.0159565,51.435993,bench
 0.0161356,51.435936,bench
@@ -67293,10 +67293,10 @@ lon,lat,amenity
 -0.1603337,51.438076,childcare
 -0.0798883,51.41965,bicycle_parking
 -0.0797112,51.419666,bicycle_parking
--3.9e-06,51.60781,bicycle_parking
+-3.9E-06,51.60781,bicycle_parking
 0.0011991,51.608055,bicycle_parking
 0.0009681,51.60691,atm
-2.29e-05,51.60732,bicycle_parking
+2.29E-05,51.60732,bicycle_parking
 -0.1876374,51.441673,bicycle_parking
 -0.1883256,51.442432,bicycle_parking
 -0.1874894,51.441433,bicycle_parking
@@ -69702,8 +69702,8 @@ lon,lat,amenity
 0.0018162,51.477978,waste_basket
 0.020636,51.538197,waste_basket
 0.0206276,51.538162,waste_basket
--7.22e-05,51.474136,bench
-7.5e-06,51.47417,waste_basket
+-7.22E-05,51.474136,bench
+7.5E-06,51.47417,waste_basket
 0.0004872,51.47438,bench
 0.0007001,51.47442,bench
 0.0002303,51.47421,bench
@@ -73765,7 +73765,7 @@ lon,lat,amenity
 -0.1647388,51.52313,bench
 -0.2051556,51.49393,bicycle_parking
 -0.005834,51.450607,bicycle_parking
-8.32e-05,51.449852,bicycle_parking
+8.32E-05,51.449852,bicycle_parking
 0.0002884,51.44964,bicycle_parking
 0.0116674,51.456722,bicycle_parking
 0.0111773,51.457176,bicycle_parking
@@ -73789,7 +73789,7 @@ lon,lat,amenity
 0.0133256,51.44853,bicycle_parking
 0.0116076,51.456043,bicycle_parking
 0.0108933,51.455627,bicycle_parking
-3.65e-05,51.453396,bicycle_parking
+3.65E-05,51.453396,bicycle_parking
 0.0001175,51.45345,bicycle_parking
 -0.0051777,51.460224,bicycle_parking
 -0.0055997,51.46108,bicycle_parking
@@ -82312,7 +82312,7 @@ lon,lat,amenity
 0.0068022,51.46582,marketplace
 -0.0203615,51.4113,post_box
 -0.0192046,51.412678,post_box
-3.76e-05,51.41475,post_box
+3.76E-05,51.41475,post_box
 -0.025852,51.42119,post_box
 -0.0222409,51.415306,post_box
 -0.0298932,51.414734,post_box
