@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import render, { MyMapComponent } from "./Map";
+
+import { Stack } from "@mui/material";
 
 const MapMain = () => {
   // Fetch the data from the backend
-  const [data, setData] = React.useState(null);
-  React.useEffect(() => {
-    fetch("http://0.0.0.0:5000/data")
+  const [currentData, setData] = useState(null);
+  useEffect(() => {
+    fetch("/data")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+        setData(data.data);
+      });
   }, []);
 
-  console.log(data);
+  useEffect(() => {}, [currentData]);
 
-  // fetch("http://localhost:3000/api/");
   return (
-    <div>
-      <div>3DMapMain</div>
-      <div>{data}</div>
-    </div>
+    <Stack spacing={3} justifyContent="center" alignItems="center">
+      Hello
+      <Wrapper
+        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY as string}
+        render={render}
+      >
+        <MyMapComponent />
+      </Wrapper>
+    </Stack>
   );
 };
 

@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import MapMain from "./3DMapVisualizer/MapMain";
+import { Container } from "@mui/material";
+
 function App() {
   return (
-    <div className="App">
+    <Container>
       <MapMain />
-    </div>
+    </Container>
   );
 }
 

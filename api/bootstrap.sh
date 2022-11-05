@@ -1,3 +1,5 @@
 #!/bin/sh
-export FLASK_APP=./src/index.py
-flask --debug run -h 0.0.0.0
+# export FLASK_APP=api.py
+export FLASK_ENV=development
+export FLASK_APP=./index.py
+flask run

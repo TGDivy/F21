@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 
@@ -16,11 +15,13 @@ class DataExtraction:
 
     def run(self):
         self.read_csv()
-        return self.look_up_column(self._request).to_numpy()
+        return self.look_up_column(self._request).to_dict('records')
 
 
 def main():
-    lookup = DataExtraction("./data/2022-09-city-of-london-outcomes.csv", ['Longitude','Latitude'])
+    lookup = DataExtraction(
+        "../data/2022-09-city-of-london-outcomes.csv", ["Longitude", "Latitude"]
+    )
     print(lookup.run())
 
 
