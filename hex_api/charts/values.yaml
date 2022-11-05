@@ -1,0 +1,48 @@
+replicaCount: 1
+
+image:
+  repository: registry.tools.leapx.digital/tenants/geo-hx-2/hex-api
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: "default"
+
+env:
+  - name: API_ENDPOINT
+    value: "https://overpass.kumi.systems/api/interpreter"
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: "5"
+    memory: "64Gi"
+  requests:
+    cpu: "5"
+    memory: "32Gi"
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,19 @@
+pandas==1.4.4
+gunicorn==20.1.0
+wheel==0.37.1
+numpy==1.23.3
+fiona==1.8.21
+pyproj==3.4.0
+rtree==1.0.0
+shapely==1.8.4
+tobler==0.9.0
+osmnx==1.2.2
+h3==3.7.4
+h3pandas==0.2.3
+apipkg==3.0.1
+Flask-Caching==2.0.1
+Flask-Cors==3.0.10
+geojson==2.5.0
+orjson==3.8.0                   # https://dash.plotly.com/performance see "data serialization"
+PyYAML==6.0
+python-dotenv==0.20.0
