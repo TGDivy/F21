@@ -47,16 +47,14 @@ class Preprocessing:
         self.top_left, self.bottom_right = self.get_topLeft_bottomRight(
             self.location_data
         )
-        self.Nheight = 200
-        self.Nwidth = 200
-
-        print(self.top_left, self.bottom_right)
+        self.Nheight = 400
+        self.Nwidth = 400
 
         self.database["cell_id"] = self.database.apply(
             lambda x: self.get_cell_id((x["Longitude"], x["Latitude"])), axis=1
         )
 
-        self.database.to_csv("data/uk_police_data/uk_police_data_cell.csv")
+        # self.database.to_csv("data/uk_police_data/uk_police_data_cell.csv")
 
         self.database_osm = pd.read_csv("data/osm/POI.csv")
 
@@ -66,7 +64,9 @@ class Preprocessing:
             lambda x: self.get_cell_id((x["lon"], x["lat"])), axis=1
         )
 
-        self.database_osm.to_csv("data/osm/osm_data_cell.csv")
+        # self.database_osm.to_csv("data/osm/osm_data_cell.csv")
+
+        # self.getCombinedData()
 
     def get_topLeft_bottomRight(self, points):
         x = [point[0] for point in points]
@@ -89,6 +89,75 @@ class Preprocessing:
 
         return x_id + x_id * y_id
 
+    def getCombinedData(self):
+        uk_data = self.database
+        grouped = uk_data.groupby("cell_id").count()
+        grouped.drop(columns=["Longitude", "Latitude"], inplace=True)
+        # grouped2 = self.database_osm.groupby("cell_id").
+
+        # print(self.database_osm)
+        self.database_osm.drop(columns=["lon", "lat"], inplace=True)
+
+        # combine the two dataframes
+        combined = grouped.merge(self.database_osm, how="outer", on="cell_id").fillna(0)
+        # print(combined)
+        combined = pd.get_dummies(combined, columns=["amenity"])
+
+        combined = combined[combined.columns[combined.sum() > 5]]
+
+        return combined
+
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import mean_squared_error
 
 if __name__ == "__main__":
-    Preprocessing()
+    data = Preprocessing().getCombinedData()
+    data = (data - data.mean()) / data.std()
+    data.to_csv("data/uk_police_data_cell.csv")
+    print(data)
+
+    data["is_train"] = np.random.uniform(0, 1, len(data)) <= 0.80
+    train, test = data[data["is_train"] == True], data[data["is_train"] == False]
+
+    features = data.columns[3:]
+    y = pd.factorize(train["Outcome type"])
+
+    clf = RandomForestClassifier(
+        n_jobs=2, random_state=0, max_depth=10, n_estimators=150
+    )
+    clf.fit(train[features], y[0])
+
+    preds = clf.predict(test[features])
+    preds = y[1][preds]
+    pd.crosstab(
+        test["Outcome type"], preds, rownames=["Actual"], colnames=["Predicted"]
+    )
+
+    # print test accuracy
+
+    print("Accuracy: ", mean_squared_error(test["Outcome type"], preds))
+
+    print((preds > 1).any())
+    print((test["Outcome type"] > 1).any())
+
+    # combine preds and test["Outcome type"] into a dataframe
+
+    df = pd.DataFrame({"preds": preds, "test": test["Outcome type"]})
+    df.to_csv("data/uk_police_data/preds.csv", index=False)
+
+    # print feature importance
+
+    print("Feature importance: ", clf.feature_importances_)
+
+    # plot feature importance
+
+    final_data = pd.DataFrame(
+        {"feature": features[:10], "importance": clf.feature_importances_[:10]}
+    )
+    final_data.sort_values(by="importance", ascending=False, inplace=True)
+    final_data.plot(kind="bar", x="feature", y="importance", figsize=(20, 10))
+
+    plt.show()
+
+    plt.barh(range(len(clf.feature_importances_)), clf.feature_importances_)
