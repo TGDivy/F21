@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from uk_police_data import UKPoliceGetData
+from src.uk_police_data import UKPoliceGetData
 
 app = Flask(__name__)
 
