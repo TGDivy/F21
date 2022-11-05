@@ -1,0 +1,7 @@
+hotspot,num_shop,distance_transport_hub,num_park,demographic,income,private_house,num_police_station,distance_police
+1,3,1,1,0,1,0,0,1
+0,0,0,1,1,0,1,0,0
+1,1,0,0,0,0,0,0,0
+0,2,0,0,0,0,1,0,0
+1,4,1,0,1,1,0,1,1
+1,2,1,0,1,1,0,0,1
