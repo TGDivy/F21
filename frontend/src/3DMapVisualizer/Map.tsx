@@ -14,7 +14,7 @@ import {
 } from "three";
 
 const mapOptions = {
-  tilt: 0,
+  tilt: 67.5,
   heading: 0,
   zoom: 18,
   center: { lat: 35.6594945, lng: 139.6999859 },
@@ -90,7 +90,6 @@ export function MyMapComponent() {
           webglOverlayView.requestRedraw();
           const { tilt, heading, zoom } = mapOptions;
           map.moveCamera({ tilt, heading, zoom });
-
           // Rotate the map 360 degrees.
           if (mapOptions.tilt < 67.5) {
             mapOptions.tilt += 0.5;

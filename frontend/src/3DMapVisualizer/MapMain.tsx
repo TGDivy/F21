@@ -21,7 +21,7 @@ const MapMain = () => {
     <Stack spacing={3} justifyContent="center" alignItems="center">
       Hello
       <Wrapper
-        apiKey={"AIzaSyDwddSbdeMLDvUNIEUzv6gBb0dGFCCUyoA"}
+        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY as string}
         render={render}
       >
         <MyMapComponent />
