@@ -1,3 +1,5 @@
+import sys
+
 from data_extraction import DataExtraction
 import pandas as pd
 import numpy as np
@@ -18,7 +20,6 @@ def group_location():
 
 def findrect(rect, point):
     if rect[0][0] < point[0] < rect[1][0] and rect[0][1] < point[1] < rect[1][1]:
-
         return True
     else:
         return False
@@ -31,7 +32,7 @@ def main():
     location_data = database.loc[:, ["Longitude", "Latitude"]].to_numpy()
     for i, rectangle in enumerate(rectangle_list):
         database['rectangle'] = [i if findrect(rectangle, location) else None for location in location_data]
-    print(database)
+    database.to_csv('data_with_location.csv')
 
 
 if __name__ == "__main__":
