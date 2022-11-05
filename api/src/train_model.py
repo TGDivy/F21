@@ -6,6 +6,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import _pickle as cPickle
+
 class DataLoader:
     def __init__(self, data_source):  # array: data - time - features - has crimed - type_data
         self.datasource = pd.read_csv(data_source)
@@ -83,14 +84,14 @@ def main():
     model_BernoulliNB.fit(X_train, y_train)
     predicted_y = model_BernoulliNB.predict(X_test)
     print(metrics.classification_report(y_test, predicted_y))
-    with open('model_BernoulliNB.pkl', 'wb') as fid:
+    with open('./model/model_BernoulliNB.pkl', 'wb') as fid:
         cPickle.dump(model_BernoulliNB, fid)
     # 2
     model_MultinomialNB = naive_bayes.MultinomialNB()
     model_MultinomialNB.fit(X_train, y_train)
     predicted_y_MultinomialNB = model_MultinomialNB.predict(X_test)
     print(metrics.classification_report(y_test, predicted_y_MultinomialNB))
-    with open('model_MultinomialNB.pkl', 'wb') as fid:
+    with open('./model/model_MultinomialNB.pkl', 'wb') as fid:
         cPickle.dump(model_MultinomialNB, fid)
 
     # load model:
