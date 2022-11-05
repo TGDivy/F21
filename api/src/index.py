@@ -5,4 +5,4 @@ app = Flask(__name__)
 
 @app.route("/data", methods=["GET"])
 def hello_world():
-    return jsonify("Hello, World!")
+    return {"data": "Hello World"}
