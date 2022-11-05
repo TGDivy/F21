@@ -50,6 +50,18 @@ class UKPoliceData:
         return self._database["Outcome type"].unique()
 
 
+class UKPoliceGetData:
+    def __init__(self, path_dir):
+        self.path_dir = path_dir
+        self.file_name = "uk_police_data.csv"
+
+    def get_data(self):
+        return pd.read_csv(f"{self.path_dir}/{self.file_name}")
+
+    def get_crime_types(self):
+        return pd.read_csv(f"{self.path_dir}/{self.file_name}")["Outcome type"].unique()
+
+
 if __name__ == "__main__":
     uk_police_data = UKPoliceData("api/data/uk_police_data")
     df = uk_police_data.get_data()
@@ -57,5 +69,4 @@ if __name__ == "__main__":
     df.to_csv("api/data/uk_police_data/uk_police_data.csv")
 
     print(df.head())
-
     print(uk_police_data.get_crime_types())
