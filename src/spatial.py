@@ -1,6 +1,7 @@
 import pandas as pd
 from pyrosm import get_data
 from pyrosm import OSM
+import matplotlib.pyplot as plt
 
 
 class OpenStreetMap:
@@ -14,9 +15,11 @@ class OpenStreetMap:
         Returns:
             _type_: List(List(Float, Float))
         """
-        df = self.osm.get_buildings()
+        landuse = self.osm.get_landuse()
+        landuse.plot(column="landuse", legend=True, figsize=(10, 6))
+        plt.show()
 
-        return df
+        return landuse
 
 
 if __name__ == "__main__":
@@ -24,4 +27,4 @@ if __name__ == "__main__":
     df = osm.get_data()
     print(df.head())
     print(df.columns)
-    print(df["osm_type"].unique())
+    print(df["tags"].unique())
