@@ -1,6 +1,9 @@
-import React, {useEffect, useState} from "react";
-import { render } from "react-dom";
-import Render from "./SimpleMap";
+import React, { useEffect, useState } from "react";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import render, { MyMapComponent } from "./Map";
+
+import { Stack } from "@mui/material";
+
 const MapMain = () => {
   // Fetch the data from the backend
   const [currentData, setData] = useState(null);
@@ -12,18 +15,18 @@ const MapMain = () => {
       });
   }, []);
 
-  useEffect(()=> {
-      Render();
-  }, [currentData]);
+  useEffect(() => {}, [currentData]);
 
   return (
-    <div>
-      <div>3DMapMain</div>
-      <div>{currentData}</div>
-    <canvas id="map">
-    
-    </canvas>
-    </div>
+    <Stack spacing={3} justifyContent="center" alignItems="center">
+      Hello
+      <Wrapper
+        apiKey={"AIzaSyDwddSbdeMLDvUNIEUzv6gBb0dGFCCUyoA"}
+        render={render}
+      >
+        <MyMapComponent />
+      </Wrapper>
+    </Stack>
   );
 };
 
