@@ -55,7 +55,9 @@ def lat_long_to_id(lat: float, long: float, steps_x=40, steps_y=40):
     return x + y * steps_x
 
 
-def id_to_lat_long(id: int, steps_x=40, steps_y=40):
+def id_to_rect(id: int, steps_x=40, steps_y=40):
+    if id == -1:
+        return -1
     (top_left_lat, top_left_long), (bottom_right_lat, bottom_right_long) = (
         CONSTANTS["TOP_LEFT"],
         CONSTANTS["BOTTOM_RIGHT"],
@@ -70,7 +72,18 @@ def id_to_lat_long(id: int, steps_x=40, steps_y=40):
     x = id % steps_x
     y = id // steps_x
 
-    return (top_left_lat - y * y_step, bottom_right_long + x * x_step)
+    top_left_lat = top_left_lat - y * y_step
+    top_left_long = bottom_right_long + x * x_step
+
+    bottom_right_lat = top_left_lat - y_step
+    bottom_right_long = top_left_long + x_step
+
+    return (
+        top_left_lat,
+        top_left_long,
+        bottom_right_lat,
+        bottom_right_long,
+    )
 
 
 def get_data(weak_outcomes, month1, month2):

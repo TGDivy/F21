@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from src.uk_police_data import UKPoliceGetData
-from test_script import Model, get_data
+from src.test_script import Model, get_data, id_to_rect
 from sklearn.metrics import mean_squared_error, r2_score
 
 # create random forest model
@@ -31,7 +31,7 @@ def data():
     return jsonify(df.to_dict(orient="records"))
 
 
-@app.route("/data", methods=["GET"])
+@app.route("/predict", methods=["GET"])
 def predict():
     year = 2020
     month = 1
@@ -59,3 +59,11 @@ def predict():
 
     y_test = merged_date2["Crime Count"]
     y_pred = model.predict(merged_date2)
+
+    # return id_to_rect for each id
+    merged_date2["Crime Count Predicted"] = y_pred
+    merged_date2["rect"] = merged_date2["id"].apply(id_to_rect)
+
+    merged_date2 = merged_date2[["id", "rect", "Crime Count", "Crime Count Predicted"]]
+
+    return jsonify(merged_date2.to_dict(orient="records"))
