@@ -9,7 +9,7 @@ class UKPoliceData:
         database = self._read_csv()
         self._database = self.clean_data(database)
 
-    def _read_csv(self, year_range=(2019, 2023)):
+    def _read_csv(self, year_range=(2022, 2023)):
         database = pd.DataFrame()
         for year in range(*year_range):
             for month in range(1, 13):
@@ -63,10 +63,10 @@ class UKPoliceGetData:
 
 
 if __name__ == "__main__":
-    uk_police_data = UKPoliceData("api/data/uk_police_data")
+    uk_police_data = UKPoliceData("data/uk_police_data")
     df = uk_police_data.get_data()
 
-    df.to_csv("api/data/uk_police_data/uk_police_data.csv")
+    df.to_csv("data/uk_police_data/uk_police_data.csv")
 
     print(df.head())
-    print(uk_police_data.get_crime_types())
+    # print(uk_police_data.get_crime_types())
